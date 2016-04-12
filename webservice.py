@@ -21,7 +21,7 @@ date_modif = timezone.localize(date)
 class time:
     def GET(self, time):
         try:
-            if dist == 'Ubuntu' and release == '14.04':
+            if dist == 'Red Hat' and release == '6.0':
                 return 'The Time is: ' + str(date_modif)
         except ValueError:
             print 'Error'

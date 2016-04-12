@@ -20,3 +20,5 @@ python setup.py install
 # Installation de Pytz
 
 easy_install --upgrade pytz
+
+# Création de fichier config.py qui le timezone
