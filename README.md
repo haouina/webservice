@@ -21,4 +21,9 @@ python setup.py install
 
 easy_install --upgrade pytz
 
-# Création de fichier config.py qui le timezone
+# Création de fichier config.py qui contient le timezone par défaut
+
+# La commande web est une alias qui permet d'exécuter le script webservice.py
+
+alias web='python /root/scripts-python/webservice.py'
+
