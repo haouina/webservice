@@ -16,3 +16,7 @@ python setup.py install
 
 
 * Une fois installée il est possible de l'importer et coder le webservice  
+
+# Installation de Pytz
+
+easy_install --upgrade pytz
