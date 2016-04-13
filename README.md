@@ -144,8 +144,25 @@
   
   -> echo "require 'puppetlabs_spec_helper/rake_tasks'" >> Rakefile
 
-  -> nano PUPPET_DIR_MODULE/spec/classes/python_spec.rb
+  -> nano PUPPET_DIR_MODULE/spec/classes/python_spec.rb (Source https://nikokiuru.com/2014/10/create-puppet-module-test-case-less-than-5-minutes/)
+ 
+       require 'spec_helper'
 
+        describe 'webservice', :type => 'class' do
+        context 'install python-pip' do
+            it { should contain_package('python') }
+        end
+  
+        context 'install python' do
+            it { should contain_package('python-pip') }
+        end
+  
+        context 'install python-setuptools' do
+            it { should contain_package('python-setuptools') }
+        end
+      end
+
+  
   -> bundle exec rake spec
 
 * J'ai fait aussi un "smoke test" via test.sh
