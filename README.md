@@ -49,6 +49,9 @@
 
 * J'ai fait un test unitaire pour puppet "python_spec.rb" je suis entrain de me former à propos des tests unitaires et d'intégration
 
+* J'ai fait aussi un "smoke test" via test.sh
+ 
+
 ## ENVIRONNEMENT DE TEST AVEC DOCKER
 
 * J'ai créer un fichier dockerfile afin de préparer l'environnement de Test et je l'ai mis sur github.
