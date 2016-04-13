@@ -12,7 +12,7 @@
 * Installation de web.py
   -> python setup.py install
 
-* Une fois installée il est possible de l'importer. Le nom de l'application est "webservice.py"
+* Une fois installée il est possible de l'importer. 
 
 * Installation de Pytz
 
