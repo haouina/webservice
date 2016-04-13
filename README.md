@@ -36,3 +36,4 @@
   
   -> pip install webservice
  
+* J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
