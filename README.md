@@ -38,4 +38,6 @@
 
 * Une fois installée elle peut être appeler avec webservice.py 
  
+* Le répetoire dist contient l'application packagée
+
 * J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
