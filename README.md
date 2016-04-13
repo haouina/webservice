@@ -24,11 +24,20 @@
   
   -> touch setup.py
 
+      #!/usr/bin/python2.7
+
+      from setuptools import setup
+
+      setup(
+       name='webservice', version='0.3', scripts=['webservice.py','config.py']
+      )
+   
+
   -> python setup.py sdist (Packager l'application)
 
-  -> tar -xvzf webservice-0.1.tar.gz
+  -> tar -xvzf webservice-0.3.tar.gz
 
-  -> cd webservice-0.1 && python setup.py install
+  -> cd webservice-0.3 && python setup.py install
 
   -> python setup.py register
 
