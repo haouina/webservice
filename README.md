@@ -1,4 +1,4 @@
-***********MISE EN PLACE DE WEBSERVICE***********
+## MISE EN PLACE DE WEBSERVICE
 
 * Téléchargement de web.py afin de mettre en place le webservice RestFul:
   -> wget http://webpy.org/static/web.py-0.37.tar.gz
