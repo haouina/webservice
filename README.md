@@ -24,7 +24,7 @@
   
   -> touch setup.py
 
-  -> python setup.py sdist
+  -> python setup.py sdist (Packager l'application)
 
   -> tar -xvzf webservice-0.1.tar.gz
 
