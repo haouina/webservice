@@ -47,8 +47,7 @@
 
 * J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
 
-* Pour le test de puppet j'étais obligé de développer un script shell "test.sh".
-
+* J'ai fait un test unitaire pour puppet "python_spec.rb" je suis entrain de me former à propos des tests unitaires et d'intégration
 
 ## ENVIRONNEMENT DE TEST AVEC DOCKER
 
