@@ -48,6 +48,25 @@
 * J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
 
 * J'ai fait un test unitaire pour puppet "python_spec.rb" je suis entrain de me former à propos des tests unitaires et d'intégration
+  
+  -> nano Gemfile
+
+      source 'https://rubygems.org'
+      puppetversion = ENV.key?('PUPPET_VERSION') ? "= #{ENV['PUPPET_VERSION']}" : ['>= 2.7']
+      gem 'puppet', puppetversion
+      gem 'puppetlabs_spec_helper', '>= 0.1.0'
+      gem 'rspec', '>=3.1.0'
+      gem 'rspec-puppet'
+  
+  -> bundle install
+
+  -> rspec-puppet-init
+  
+  -> echo "require 'puppetlabs_spec_helper/rake_tasks'" >> Rakefile
+
+  -> nano PUPPET_DIR_MODULE/spec/classes/python_spec.rb
+
+  -> bundle exec rake spec
 
 * J'ai fait aussi un "smoke test" via test.sh
  
