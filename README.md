@@ -21,10 +21,15 @@
 * Une fois l'application est codée alors il faut la packager
   
   -> touch setup.py
+
   -> python setup.py sdist
+
   -> tar -xvzf webservice-0.1.tar.gz
+
   -> cd webservice-0.1 && python setup.py install
+
   -> python setup.py register
+
   -> python setup.py sdist upload
 
 * Maintenant l'appilcation peut être installée depuis n'importe quel machine:
