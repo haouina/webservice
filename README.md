@@ -13,7 +13,7 @@
   -> python setup.py install
 
 * Une fois installée il est possible de l'importer et voici le code de webservice
-
+->
     #!/usr/bin/python2.7
 
     import web
@@ -47,7 +47,7 @@
     if __name__ == "__main__":
         app.run()
 
-
+->
 
 
 * Installation de Pytz
