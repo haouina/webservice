@@ -166,7 +166,14 @@
   -> bundle exec rake spec
 
 * J'ai fait aussi un "smoke test" via test.sh
- 
+      
+      #!/bin/bash
+
+      DIR='/etc/puppetlabs/code/modules/webservice'
+
+      puppet parser validate $DIR/manifests
+      puppet apply --noop --modulepath $DIR $DIR/manifests/init.pp 
+
 
 ## ENVIRONNEMENT DE TEST AVEC DOCKER
 
