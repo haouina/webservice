@@ -1,3 +1,5 @@
+***********MISE EN PLACE DE WEBSERVICE***********
+
 * Téléchargement de web.py afin de mettre en place le webservice RestFul:
   -> wget http://webpy.org/static/web.py-0.37.tar.gz
 
@@ -14,7 +16,7 @@
 
 * Installation de Pytz
 
-  -> easy_install --upgrade pytz
+  -> easy_install pytz
 
 * Création de fichier config.py qui contient le timezone par défaut
 
@@ -40,4 +42,18 @@
  
 * Le répetoire dist contient l'application packagée
 
+
+**************DEPLOIEMENT avec PUPPET*************
+
 * J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
+
+
+**************ENVIRONNEMENT DE TEST AVEC DOCKER*********
+
+* J'ai créer un fichier dockerfile afin de préparer l'environnement de Test et je l'ai mis sur github.
+
+  -> touch dockerfile
+ 
+  -> docker build -t appcontainers/centos:6 .
+
+  -> docker run -t -i -p 14000:8080 appcontainers/centos:6 (Exposer le port 8080 et le rediriger vers le port 14000 de Host)
