@@ -35,5 +35,7 @@
 * Maintenant l'appilcation peut être installée depuis n'importe quel machine:
   
   -> pip install webservice
+
+* Une fois installée elle peut être appeler avec webservice.py 
  
 * J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
