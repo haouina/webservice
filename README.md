@@ -146,7 +146,7 @@
 
   -> nano PUPPET_DIR_MODULE/spec/classes/python_spec.rb (Source https://nikokiuru.com/2014/10/create-puppet-module-test-case-less-than-5-minutes/)
  
-       require 'spec_helper'
+      require 'spec_helper'
 
         describe 'webservice', :type => 'class' do
         context 'install python-pip' do
@@ -168,9 +168,7 @@
 * J'ai fait aussi un "smoke test" via test.sh
       
       #!/bin/bash
-
       DIR='/etc/puppetlabs/code/modules/webservice'
-
       puppet parser validate $DIR/manifests
       puppet apply --noop --modulepath $DIR $DIR/manifests/init.pp 
 
