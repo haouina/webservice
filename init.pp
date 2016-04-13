@@ -54,6 +54,12 @@ exec { 'install web.py':
         path => ['/usr/bin'],
     }
 
+exec { 'install pytz':
+        cwd => "/tmp/",
+        command => "easy_install pytz",
+        path => ['/usr/bin'],
+    }
+
 # Executing script
 exec { 'execute script':
         cwd => "/tmp",
