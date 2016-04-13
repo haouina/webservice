@@ -47,7 +47,7 @@
 
 * J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
 
-* Concernant le test de puppet j'étais obligé de développer un script shell "test.sh".
+* Pour le test de puppet j'étais obligé de développer un script shell "test.sh".
 
 
 ## ENVIRONNEMENT DE TEST AVEC DOCKER
