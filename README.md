@@ -43,7 +43,7 @@
 * Le répetoire dist contient l'application packagée
 
 
-## DEPLOIEMENT avec PUPPET
+## DEPLOIEMENT AVEC PUPPET
 
 * J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
 
