@@ -43,15 +43,14 @@
 * Le répetoire dist contient l'application packagée
 
 
-**************DEPLOIEMENT avec PUPPET*************
+## DEPLOIEMENT avec PUPPET
 
 * J'ai mis les fichiers site.pp et init.pp concernant l'automatisation avec puppet
 
-* Concernant le test de puppet j'étais obligé de développer un script shell "test.sh"
-vu le manque d'info sur le Net.
+* Concernant le test de puppet j'étais obligé de développer un script shell "test.sh".
 
 
-**************ENVIRONNEMENT DE TEST AVEC DOCKER*********
+## ENVIRONNEMENT DE TEST AVEC DOCKER
 
 * J'ai créer un fichier dockerfile afin de préparer l'environnement de Test et je l'ai mis sur github.
 
