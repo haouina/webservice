@@ -51,6 +51,11 @@
  
 * Le répetoire dist contient l'application packagée
 
+* J'ai fait un test de webservice en m'inspirant d'un article sur le Net: https://fijiaaron.wordpress.com/2011/09/15/testing-rest-web-services-with-python/ 
+  
+  et le nom de script est "test.py" 
+
+
 
 ## DEPLOIEMENT AVEC PUPPET
 
