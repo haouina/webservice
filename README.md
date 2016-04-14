@@ -150,20 +150,23 @@
   -> echo "require 'puppetlabs_spec_helper/rake_tasks'" >> Rakefile
 
   -> nano PUPPET_DIR_MODULE/spec/classes/python_spec.rb (Source https://nikokiuru.com/2014/10/create-puppet-module-test-case-less-than-5-minutes/)
- 
+     (modification) https://engineering.opendns.com/2014/11/13/testing-puppet-modules-vagrant-serverspec/   
+  
+  -> Un exemple de Test:
+
       require 'spec_helper'
 
         describe 'webservice', :type => 'class' do
         context 'install python-pip' do
-            it { should contain_package('python') }
+            it { should be_installed }
         end
   
         context 'install python' do
-            it { should contain_package('python-pip') }
+            it { should be_installed }
         end
   
         context 'install python-setuptools' do
-            it { should contain_package('python-setuptools') }
+            it { should be_installed }
         end
       end
 
