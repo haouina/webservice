@@ -1,6 +1,5 @@
 FROM appcontainers/centos:6
 
-RUN yum update -y
 RUN yum install -y python python-setuptools python-pip
 RUN yum install -y wget
 RUN wget http://webpy.org/static/web.py-0.37.tar.gz
