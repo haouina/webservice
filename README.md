@@ -33,7 +33,7 @@
       )
    
 
-  -> python setup.py sdist (Packager l'application)
+  -> python setup.py sdist || python setup.py bdist --formats=egg || python setup.py bdist --formats=rpm
 
   -> tar -xvzf webservice-0.3.tar.gz
 
