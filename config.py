@@ -1,1 +1,1 @@
-Default_Timezone = "Africa/Tunis"
+link = '/(.*)'
