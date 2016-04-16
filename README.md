@@ -115,12 +115,12 @@ webservice class install the webservice.py
             path    => ['/usr/bin'],
        }
 
-# Executing script
-exec { 'execute script':
-  cwd     => '/tmp',
-  command => 'pip install webservice',
-  path    => ['/usr/bin/'],
-}
+            # Executing script
+            exec { 'execute script':
+            cwd     => '/tmp',
+            command => 'pip install webservice',
+            path    => ['/usr/bin/'],
+       }
 }
 
 
