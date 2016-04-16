@@ -3,7 +3,6 @@
 import web
 import platform
 import config
-import pytz
 import time
 
 
