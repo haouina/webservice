@@ -3,7 +3,7 @@
 import urllib
 import urllib2
 
-url = "http://192.168.1.26:8080/time"
+url = "http://192.168.1.26:8080/temps"
 headers = {"Content-Type": "application/json", "Authorization": "Basic "}
 data = {"param": "value"}
 request = urllib2.Request(url)
