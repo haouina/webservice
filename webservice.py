@@ -5,28 +5,24 @@ import datetime
 import platform
 import config
 import pytz
+import time
+
 
 urls = (
-    '/(.*)', 'time'
+    '/(.*)', 'temps'
 )
 app = web.application(urls, globals())
-
-date = datetime.datetime.now()
+now = time.localtime()
 dist = platform.linux_distribution()[0]
 release = platform.linux_distribution()[1]
-timezone = pytz.timezone(config.Default_Timezone)
-date_modif = timezone.localize(date)
+#timezone = pytz.timezone(config.Default_Timezone)
+print time.strftime('Nous sommes en %Y, et il est %H:%M.',time.localtime()) 
 
 
-class time:
-    def GET(self, time):
-        try:
-            if dist == 'Red Hat' and release == '6.0':
-                return 'The Time is: ' + str(date_modif)
-        except ValueError:
-            print 'Error'
-        finally:
-            print 'You are not allowed to use this webservice'
+class temps:
+    def GET(self, temps):
+                 return time.strftime('Nous sommes: en %Y, et il est %H:%M:%S', time.localtime())
+       
 
 if __name__ == "__main__":
     app.run()
