@@ -51,15 +51,13 @@ exec { 'install pytz':
   path    => ['/usr/bin'],
 }
 
-exec { 'transfert config file':
-  cwd     => '/tmp',
-  command =>  ensure => present,
-  source  => 'puppet:///modules/webservice/config.py'
+file { '/tmp/config.py':
+  ensure => present,
+  source => 'puppet:///modules/webservice/config.py'
 }
 
-exec { 'transfert webservice file':
-  cwd     => '/tmp',
-  command => ensure => present,
-  source  => 'puppet:///modules/webservice/webservice.py'
+file { '/tmp/webservice.py':
+  ensure => present,
+  source => 'puppet:///modules/webservice/webservice.py'
 }
 }
