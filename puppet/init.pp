@@ -24,7 +24,6 @@ package { 'python-pip':
   ensure => installed,
 }
 
-
 # Copy the Web.py to /tmp
 file { '/tmp/web.py-0.37.tar.gz':
   ensure => present,
@@ -52,11 +51,15 @@ exec { 'install pytz':
   path    => ['/usr/bin'],
 }
 
-# Executing script
-exec { 'execute script':
+exec { 'transfert config file':
   cwd     => '/tmp',
-  command => 'pip install webservice',
-  path    => ['/usr/bin/'],
-}
+  command =>  ensure => present,
+  source  => 'puppet:///modules/webservice/config.py'
 }
 
+exec { 'transfert webservice file':
+  cwd     => '/tmp',
+  command => ensure => present,
+  source  => 'puppet:///modules/webservice/webservice.py'
+}
+}
