@@ -26,7 +26,6 @@ def install(pkg=None):
 
 @task
 def check():
-    run("mkdir /tmp/trunk/")
     run("uptime")
     run("hostname")
     result = run("ls -l /var/www")
@@ -56,5 +55,9 @@ def install_memcached():
 
 @task
 def update_install():
+    memory_usage()
+    deploy()
+    local_tar()
     update_upgrade()
     install_memcached()
+    check()
