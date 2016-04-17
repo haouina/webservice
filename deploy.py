@@ -1,7 +1,7 @@
 from fabric.api import cd, env, prefix, run, task, prompt, local, get
 
 env.hosts = ['prod']
-env.user   = "root"
+env.user = "root"
 
 
 @task
@@ -35,7 +35,7 @@ def check():
 
 @task
 def local_tar():
-    local("tar -xzvf /root/web.py-0.37.tar.gz -C /root")    
+    local("tar -xzvf /root/web.py-0.37.tar.gz -C /root")
 
 
 @task
@@ -47,6 +47,7 @@ def file_get(remote_path, local_path):
 def update_upgrade():
     run("aptitude    update")
     run("aptitude -y upgrade")
+
 
 @task
 def install_memcached():
