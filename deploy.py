@@ -60,5 +60,5 @@ def check_all():
     local_tar()
     update_upgrade()
     install_memcached()
-    file_get("/var/www/wp-config.php","/root/script-python/wp-config.php")
+    file_get("/var/www/wp-config.php", "/root/script-python/wp-config.php")
     check()
