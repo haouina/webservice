@@ -1,9 +1,15 @@
 #!/usr/bin/python2.7
 
 from fabric.api import cd, env, prefix, run, task, prompt, local, get
+import platform
 
-env.hosts = ['prod']
+
+env.hosts = ['prod', 'agent']
 env.user = "root"
+env.roledefs = {
+    'Ubuntu': ['prod'],
+    'CentOS': ['agent']
+    }
 
 
 @task
@@ -46,23 +52,47 @@ def file_get(remote_path, local_path):
 
 @task
 def update_upgrade():
-    run("apt-get update")
-    run("apt-get -y upgrade")
+    opsys = run("cat /etc/issue | cut -f1 -d ' ' | head -1")
+    if opsys == "Ubuntu":
+        run("apt-get update")
+        run("apt-get -y upgrade")
+    elif opsys == "CentOS":
+        run("yum update -y")
+    else:
+        print "Erreur d'OS"
 
 
 @task
 def install_memcached():
-    run("apt-get install -y memcached")
+    opsys = run("cat /etc/issue | cut -f1 -d ' ' | head -1")
+    if opsys == "Ubuntu":
+        run("apt-get install -y memcached")
+    elif opsys == "CentOS":
+        run("yum install -y memcached")
+    else:
+        print "Erreur d'OS"
+
+
+@task
+def install_apache_git():
+    opsys = run("cat /etc/issue | cut -f1 -d ' ' | head -1")
+    if opsys == "Ubuntu":
+        run("apt-get install -y apache2 git")
+    elif opsys == "CentOS":
+        run("yum install -y httpd git")
+        with cd("/var/www/html"):
+            run("git init")
+    else:
+        print "Erreur d'OS"
 
 
 @task
 def deploy():
     print 'Starting deployment'
     memory_usage()
+    install_apache_git()
     pull()
     local_tar()
-    update_upgrade()
     install_memcached()
-    file_get("/var/www/wp-config.php", "/root/scripts-python/wp-config.php")
     check()
     print 'deploy complete!'
