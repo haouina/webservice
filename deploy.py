@@ -1,3 +1,5 @@
+#!/usr/bin/python2.7
+
 from fabric.api import cd, env, prefix, run, task, prompt, local, get
 
 env.hosts = ['prod']
@@ -44,17 +46,18 @@ def file_get(remote_path, local_path):
 
 @task
 def update_upgrade():
-    run("aptitude    update")
-    run("aptitude -y upgrade")
+    run("apt-get update")
+    run("apt-get -y upgrade")
 
 
 @task
 def install_memcached():
-    run("aptitude install -y memcached")
+    run("apt-get install -y memcached")
 
 
 @task
-def check_all():
+def deploy():
+    print 'Starting deployment'
     memory_usage()
     pull()
     local_tar()
@@ -62,3 +65,4 @@ def check_all():
     install_memcached()
     file_get("/var/www/wp-config.php", "/root/scripts-python/wp-config.php")
     check()
+    print 'deploy complete!'
