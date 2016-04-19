@@ -10,9 +10,9 @@ def memory_usage():
 
 
 @task
-def deploy():
+def pull(branch='master', remote='https://github.com/haouina/app.git'):
     with cd('/var/www/html/'):
-            run('git pull https://github.com/haouina/app.git')
+        run("git pull %s %s" % (remote, branch))
 
 
 @task
@@ -56,9 +56,9 @@ def install_memcached():
 @task
 def check_all():
     memory_usage()
-    deploy()
+    pull()
     local_tar()
     update_upgrade()
     install_memcached()
-    file_get("/var/www/wp-config.php", "/root/script-python/wp-config.php")
+    file_get("/var/www/wp-config.php", "/root/scripts-python/wp-config.php")
     check()
