@@ -1,19 +1,21 @@
 #!/usr/bin/python2.7
 
+
 class Employee:
-   'Common base class for all employees'
-   empCount = 0
+    'Common base class for all employees'
+    empCount = 0
 
-   def __init__(self, name, salary):
-      self.name = name
-      self.salary = salary
-      Employee.empCount += 1
-   
-   def displayCount(self):
-     print "Total Employee %d" % Employee.empCount
+    def __init__(self, name, salary):
+        self.name = name
+        self.salary = salary
+        Employee.empCount += 1
 
-   def displayEmployee(self):
-      print "Name : ", self.name,  ", Salary: ", self.salary
+    def displayCount(self):
+        print "Total Employee %d" % Employee.empCount
+
+    def displayEmployee(self):
+        print "Name : ", self.name,  ", Salary: ", self.salary
+
 
 print "Employee.__doc__:", Employee.__doc__
 print "Employee.__name__:", Employee.__name__
