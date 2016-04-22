@@ -183,13 +183,9 @@ webservice class install the webservice.py
       RUN tar xvzf web.py-0.37.tar.gz
       RUN cd web.py-0.37 && python setup.py install
       RUN easy_install pytz
-      RUN pip install webservice
 
       EXPOSE  8080
 
-      CMD ["/usr/bin/webservice.py"]
-
- 
   -> docker build -t appcontainers/centos:6 .
 
   -> docker run -t -i -p 14000:8080 appcontainers/centos:6 (Exposer le port 8080 et le rediriger vers le port 14000 de Host)

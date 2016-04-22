@@ -7,9 +7,6 @@ RUN yum install -y tar.x86_64
 RUN tar xvzf web.py-0.37.tar.gz
 RUN cd web.py-0.37 && python setup.py install
 RUN easy_install pytz
-RUN pip install webservice
 
 EXPOSE  8080
-
-CMD ["/usr/bin/webservice.py"]
 
