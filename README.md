@@ -115,11 +115,14 @@ webservice class install the webservice.py
             path    => ['/usr/bin'],
        }
 
-            # Executing script
-            exec { 'execute script':
-            cwd     => '/tmp',
-            command => 'pip install webservice',
-            path    => ['/usr/bin/'],
+            file { '/tmp/config.py':
+            ensure => present,
+            source => 'puppet:///modules/webservice/config.py'
+       }
+
+            file { '/tmp/webservice.py':
+            ensure => present,
+            source => 'puppet:///modules/webservice/webservice.py'
        }
 }
 
