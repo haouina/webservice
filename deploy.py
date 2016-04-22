@@ -1,7 +1,6 @@
 #!/usr/bin/python2.7
 
 from fabric.api import cd, env, prefix, run, task, prompt, local, get
-import platform
 
 
 env.hosts = ['prod', 'agent']
