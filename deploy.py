@@ -3,10 +3,10 @@
 from fabric.api import cd, env, prefix, run, task, prompt, local, get
 
 
-env.hosts = ['prod', 'agent']
+env.hosts = ['dev', 'agent']
 env.user = "root"
 env.roledefs = {
-    'Ubuntu': ['prod'],
+    'Ubuntu': ['dev'],
     'CentOS': ['agent']
     }
 
@@ -89,9 +89,9 @@ def install_apache_git():
 def deploy():
     print 'Starting deployment'
     memory_usage()
-    install_apache_git()
+#    install_apache_git()
     pull()
-    local_tar()
-    install_memcached()
+#    local_tar()
+#    install_memcached()
     check()
     print 'deploy complete!'
